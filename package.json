@@ -17,5 +17,10 @@
   "dependencies": {
     "babel-preset-solid": "^1.8.6",
     "solid-js": "^1.8.7"
+  },
+  "devDependencies": {
+    "rollup": "^4.6.1",
+    "serve": "^14.2.1",
+    "tsc": "^2.0.4"
   }
 }
