@@ -2,7 +2,7 @@
   "name": "my-site-app",
   "private": true,
   "description": "A simple site app on Solid",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "main": "public/index.js",
   "scripts": {
