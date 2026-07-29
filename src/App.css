@@ -20,6 +20,11 @@
   }
 }
 
+:root {
+  --color-primary: #535bf2; /* purple used for active nav underline */
+  --color-accent: #5eead4; /* teal used for hover states */
+}
+
 #root {
   min-height: 100vh;
 }
@@ -51,12 +56,22 @@ body {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: #5eead4;
-  transition: width 0.3s ease-in-out;
+  background-color: var(--color-primary); /* active/hover underline color */
+  transition: width 0.28s cubic-bezier(.2,.9,.2,1), background-color 0.2s ease;
 }
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.nav-link.is-active::after {
+  width: 100%;
+  background-color: var(--color-primary);
+}
+
+/* Hover should change underline color to the teal used by `.text-teal-300` */
+.nav-link:hover::after {
+  background-color: var(--color-accent);
 }
 
 .project-card {
@@ -81,7 +96,7 @@ body {
 }
 
 .skill-tag:hover {
-  background-color: #5eead4;
+  background-color: var(--color-accent);
   color: #0f172a;
 }
 
