@@ -1,36 +1,29 @@
-import { Component } from "solid-js";
-import SkillTag from "./SkillTag";
+import { Component, For } from "solid-js";
 import ExperienceItem from "./ExperienceItem";
-import { For } from "solid-js";
+import SectionHeading from "./SectionHeading";
 import { experiences } from "../data/experiences";
+import { PROFILE } from "../data/profile";
 
 const MainContent: Component = () => {
   return (
     <main class="py-24 lg:w-[58%] flex-1 space-y-24 pr-1">
       <article id="about" class="mb-16 scroll-mt-24 md:mb-24 lg:mb-36">
         <div class="space-y-8">
-          <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">About</h2>
+          <SectionHeading class="mb-0">About</SectionHeading>
           <div class="space-y-6 text-gray-300 text-lg leading-8">
-            <p>
-              I'm an engineer who builds accessible, reliable web experiences end-to-end. Over the years I've
-              worked on everything from frontend UI to backend APIs and data ingestion
-              pipelines, focusing on performance, correctness and developer ergonomics.
-            </p>
-            <p>
-              I enjoy translating product ideas into pragmatic implementations, improving system reliability,
-              and mentoring teammates. In my spare time I build small tools to automate repetitive tasks and
-              explore new web platform capabilities.
-            </p>
+            <For each={PROFILE.aboutParagraphs}>
+              {(paragraph) => <p>{paragraph}</p>}
+            </For>
           </div>
         </div>
       </article>
 
       <article id="experience" class="mb-16 scroll-mt-24 md:mb-24 lg:mb-36">
-        <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">Experience</h2>
+        <SectionHeading>Experience</SectionHeading>
         <div class="space-y-12">
-          <For each={experiences}>{(e) => (
-            <ExperienceItem role={e.role} period={e.period} company={e.company} link={e.link} bullets={e.bullets} skills={e.skills}/>
-          )}</For>
+          <For each={experiences}>
+            {(exp) => <ExperienceItem {...exp} />}
+          </For>
         </div>
       </article>
 
