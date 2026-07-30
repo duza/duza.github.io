@@ -14,6 +14,27 @@ const Header: Component = () => {
           reliable, maintainable systems that people enjoy using.
         </p>
         <p class="mt-4 max-w-xl text-gray-400 text-sm">Outside of work I enjoy swimming and playing squash.</p>
+
+        <div class="animate-fadeIn mt-8 rounded-3xl border border-slate-800/70 bg-slate-900/60 p-6 shadow-2xl shadow-slate-950/40 backdrop-blur-sm">
+          <div class="flex items-start gap-4">
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-teal-400/30 to-sky-400/20 ring-1 ring-teal-300/20">
+              <svg class="h-6 w-6 text-teal-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 7h14" />
+                <path d="M7 3h10" />
+                <path d="M8 21h8" />
+                <path d="M9 10h6" />
+                <path d="M9 14h4" />
+              </svg>
+            </div>
+            <div>
+              <p class="text-sm font-semibold uppercase tracking-[0.3em] text-teal-300/80">Building thoughtful products</p>
+              <p class="mt-2 text-sm leading-7 text-slate-300">
+                I focus on delivering polished interfaces, dependable APIs, and practical systems that make teams faster.
+              </p>
+            </div>
+          </div>
+        </div>
+
         <div class="mt-6">
           <a
             href="/CV/CV_Pavel_Mikhadziuk_FullStack_Engineer_2026-07.pdf"
