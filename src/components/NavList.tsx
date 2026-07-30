@@ -18,9 +18,9 @@ const NavList: Component = () => {
           return;
         }
         // fallback: if none intersecting in this callback, check all sections and pick nearest to viewport top
-        const sections = NAV_ITEMS
-          .map((it) => document.getElementById(it.id))
-          .filter(Boolean) as HTMLElement[];
+        const sections = NAV_ITEMS.map((it) => document.getElementById(it.id)).filter(
+          Boolean
+        ) as HTMLElement[];
         let nearest: { id: string; distance: number } | null = null;
         sections.forEach((s) => {
           const rect = s.getBoundingClientRect();

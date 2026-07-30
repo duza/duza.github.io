@@ -22,9 +22,26 @@ const ExperienceItem: Component<Props> = (props) => {
             title={`Open ${props.company} website`}
             aria-label={`Open ${props.company} website`}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M7 17 L17 7" />
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M17 7h-6 M17 7v6" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M7 17 L17 7"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M17 7h-6 M17 7v6"
+              />
             </svg>
           </a>
         )}
@@ -34,9 +51,7 @@ const ExperienceItem: Component<Props> = (props) => {
       </ul>
       {props.skills && props.skills.length > 0 && (
         <div class="mt-4 flex flex-wrap gap-2">
-          <For each={props.skills}>{(s) => (
-            <SkillTag>{s}</SkillTag>
-          )}</For>
+          <For each={props.skills}>{(s) => <SkillTag>{s}</SkillTag>}</For>
         </div>
       )}
     </div>

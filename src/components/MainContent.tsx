@@ -11,9 +11,7 @@ const MainContent: Component = () => {
         <div class="space-y-8">
           <SectionHeading class="mb-0">About</SectionHeading>
           <div class="space-y-6 text-gray-300 text-lg leading-8">
-            <For each={PROFILE.aboutParagraphs}>
-              {(paragraph) => <p>{paragraph}</p>}
-            </For>
+            <For each={PROFILE.aboutParagraphs}>{(paragraph) => <p>{paragraph}</p>}</For>
           </div>
         </div>
       </article>
@@ -21,9 +19,7 @@ const MainContent: Component = () => {
       <article id="experience" class="mb-16 scroll-mt-24 md:mb-24 lg:mb-36">
         <SectionHeading>Experience</SectionHeading>
         <div class="space-y-12">
-          <For each={experiences}>
-            {(exp) => <ExperienceItem {...exp} />}
-          </For>
+          <For each={experiences}>{(exp) => <ExperienceItem {...exp} />}</For>
         </div>
       </article>
 
