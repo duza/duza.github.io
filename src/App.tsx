@@ -1,30 +1,16 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
 import './App.css'
+import Header from "./components/Header";
+import MainContent from "./components/MainContent";
 
 function App() {
-  const [count, setCount] = createSignal(0)
-
   return (
-    <>
-      <div>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
+    <div class="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-slate-100">
+      <div class="mx-auto flex min-h-screen max-w-6xl flex-col gap-10 px-4 py-16 lg:flex-row lg:items-start lg:gap-24">
+        <Header />
+
+        <MainContent />
       </div>
-      <h1>Hello at Pavel's site</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Solid logo to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
