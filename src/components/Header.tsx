@@ -12,6 +12,16 @@ const Header: Component = () => {
           Based in Wrocław, Poland, I'm a Frontend Developer with 6+ years of experience in JavaScript and Python development.
           I specialize in building robust web applications using modern frameworks and technologies.
         </p>
+        <div class="mt-6">
+          <a
+            href="../CV/CV_Pavel_Mikhadziuk_FullStack_Engineer_2026-07.pdf"
+            class="inline-flex items-center px-4 py-2 bg-slate-800 hover:bg-slate-700 text-teal-300 rounded-md text-sm"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Download CV
+          </a>
+        </div>
       </div>
 
       <NavList />
@@ -19,7 +29,7 @@ const Header: Component = () => {
       <article id="contact" class="mt-16 space-y-6 border-t border-slate-800/60 pt-8 text-gray-300 text-lg leading-8">
         <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">Contact</h2>
         <p>
-          Based in Wrocław, Poland. Feel free to reach out for opportunities or just to connect.
+          Feel free to reach out for opportunities or just to connect.
         </p>
         <ContactIcons />
       </article>

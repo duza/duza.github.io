@@ -45,10 +45,6 @@ body {
   position: relative;
 }
 
-.nav-link {
-  position: relative;
-}
-
 .nav-link::after {
   content: '';
   position: absolute;
@@ -62,16 +58,12 @@ body {
 
 .nav-link:hover::after {
   width: 100%;
+  background-color: var(--color-accent);
 }
 
 .nav-link.is-active::after {
   width: 100%;
   background-color: var(--color-primary);
-}
-
-/* Hover should change underline color to the teal used by `.text-teal-300` */
-.nav-link:hover::after {
-  background-color: var(--color-accent);
 }
 
 .project-card {
