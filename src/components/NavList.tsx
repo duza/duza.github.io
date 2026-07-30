@@ -3,7 +3,7 @@ import { Component, For, createSignal, onMount, onCleanup } from "solid-js";
 const items = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#projects", label: "Projects" },
+  // { href: "#projects", label: "Projects" },
 ];
 
 const NavList: Component = () => {
