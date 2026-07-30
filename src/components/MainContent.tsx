@@ -1,5 +1,8 @@
 import { Component } from "solid-js";
 import SkillTag from "./SkillTag";
+import ExperienceItem from "./ExperienceItem";
+import { For } from "solid-js";
+import { experiences } from "../data/experiences";
 
 const MainContent: Component = () => {
   return (
@@ -9,11 +12,14 @@ const MainContent: Component = () => {
           <h2 class="text-4xl font-bold tracking-tight sm:text-5xl">About</h2>
           <div class="space-y-6 text-gray-300 text-lg leading-8">
             <p>
-              I build accessible, pixel-perfect experiences for the web. I take pride in creating thoughtful,
-              inclusive products and have a sharp eye for the little details that separate a good product from an exceptional one.
+              I'm an engineer who builds accessible, reliable web experiences end-to-end. Over the years I've
+              worked on everything from frontend UI and design systems to backend APIs and data ingestion
+              pipelines, focusing on performance, correctness and developer ergonomics.
             </p>
             <p>
-              Most of my work sits at the intersection of design and engineering, where great user experience meets clean, scalable code.
+              I enjoy translating product ideas into pragmatic implementations, improving system reliability,
+              and mentoring teammates. In my spare time I build small tools to automate repetitive tasks and
+              explore new web platform capabilities.
             </p>
           </div>
         </div>
@@ -22,45 +28,9 @@ const MainContent: Component = () => {
       <article id="experience" class="mb-16 scroll-mt-24 md:mb-24 lg:mb-36">
         <h2 class="text-4xl font-bold tracking-tight sm:text-5xl mb-8">Experience</h2>
         <div class="space-y-12">
-          <div>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-xl font-semibold text-teal-300">Frontend Developer</h3>
-              <span class="text-gray-400">Nov 2021 - Present</span>
-            </div>
-            <h4 class="text-lg mt-3 mb-4">Coherent Solutions</h4>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>Developed Ember.js features for a major US educational content platform.</li>
-              <li>Improved backend logic in Python for business reports and ONIX imports.</li>
-              <li>Implemented synchronization between legacy monolith and new infrastructure.</li>
-              <li>Built Lambda functions to support new deployment pipelines.</li>
-              <li>Optimized PostgreSQL queries using indexes and Elasticsearch analysis.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-xl font-semibold text-teal-300">Frontend Developer</h3>
-              <span class="text-gray-400">Nov 2020 - Sep 2021</span>
-            </div>
-            <h4 class="text-lg mt-3 mb-4">ISsoft</h4>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>Built and optimized features using Ember.js.</li>
-              <li>Worked with Django and DRF for backend integrations.</li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-              <h3 class="text-xl font-semibold text-teal-300">Frontend Developer</h3>
-              <span class="text-gray-400">Nov 2019 - Nov 2020</span>
-            </div>
-            <h4 class="text-lg mt-3 mb-4">av.by</h4>
-            <ul class="list-disc list-inside space-y-2 text-gray-300">
-              <li>Implemented finance campaign features and video experiences.</li>
-              <li>Built admin interfaces for paid products and moderation workflows.</li>
-              <li>Delivered mobile app features using React Native.</li>
-            </ul>
-          </div>
+          <For each={experiences}>{(e) => (
+            <ExperienceItem role={e.role} period={e.period} company={e.company} bullets={e.bullets} />
+          )}</For>
         </div>
       </article>
 
