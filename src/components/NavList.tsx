@@ -1,13 +1,8 @@
 import { Component, For, createSignal, onMount, onCleanup } from "solid-js";
-
-const items = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  // { href: "#projects", label: "Projects" },
-];
+import { NAV_ITEMS } from "../data/navigation";
 
 const NavList: Component = () => {
-  const [active, setActive] = createSignal<string>(items[0].href.slice(1));
+  const [active, setActive] = createSignal<string>(NAV_ITEMS[0].id);
 
   let observer: IntersectionObserver | null = null;
 
@@ -23,9 +18,9 @@ const NavList: Component = () => {
           return;
         }
         // fallback: if none intersecting in this callback, check all sections and pick nearest to viewport top
-        const sections = items
-          .map((it) => document.getElementById(it.href.slice(1)))
-          .filter(Boolean) as HTMLElement[];
+        const sections = NAV_ITEMS.map((it) => document.getElementById(it.id)).filter(
+          Boolean
+        ) as HTMLElement[];
         let nearest: { id: string; distance: number } | null = null;
         sections.forEach((s) => {
           const rect = s.getBoundingClientRect();
@@ -38,8 +33,8 @@ const NavList: Component = () => {
     );
 
     // observe section elements
-    items.forEach((it) => {
-      const el = document.getElementById(it.href.slice(1));
+    NAV_ITEMS.forEach((it) => {
+      const el = document.getElementById(it.id);
       if (el) observer?.observe(el);
     });
   });
@@ -52,25 +47,24 @@ const NavList: Component = () => {
   return (
     <nav aria-label="In-page jump links">
       <ul class="list-none space-y-4">
-        <For each={items}>{(it) => {
-          const id = it.href.slice(1);
-          return (
+        <For each={NAV_ITEMS}>
+          {(it) => (
             <li>
               <a
                 href={it.href}
                 class="nav-link inline-flex items-center text-sm uppercase tracking-[0.28em] transition-colors"
                 classList={{
-                  "text-slate-300/80": active() !== id,
-                  "text-teal-300 font-semibold": active() === id,
-                  "is-active": active() === id,
+                  "text-slate-300/80": active() !== it.id,
+                  "text-teal-300 font-semibold": active() === it.id,
+                  "is-active": active() === it.id,
                 }}
-                onClick={(e) => setActive(id)}
+                onClick={() => setActive(it.id)}
               >
                 {it.label}
               </a>
             </li>
-          );
-        }}</For>
+          )}
+        </For>
       </ul>
     </nav>
   );

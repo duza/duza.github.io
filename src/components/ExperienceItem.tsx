@@ -1,13 +1,8 @@
 import { Component, For } from "solid-js";
+import SkillTag from "./SkillTag";
+import { Experience } from "../data/experiences";
 
-type Props = {
-  role: string;
-  period: string;
-  company: string;
-  link?: string;
-  bullets: string[];
-  skills?: string[];
-};
+type Props = Experience;
 
 const ExperienceItem: Component<Props> = (props) => {
   return (
@@ -27,9 +22,26 @@ const ExperienceItem: Component<Props> = (props) => {
             title={`Open ${props.company} website`}
             aria-label={`Open ${props.company} website`}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M7 17 L17 7" />
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M17 7h-6 M17 7v6" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M7 17 L17 7"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2.5"
+                d="M17 7h-6 M17 7v6"
+              />
             </svg>
           </a>
         )}
@@ -39,9 +51,7 @@ const ExperienceItem: Component<Props> = (props) => {
       </ul>
       {props.skills && props.skills.length > 0 && (
         <div class="mt-4 flex flex-wrap gap-2">
-          <For each={props.skills}>{(s) => (
-            <span class="text-xs px-2 py-1 rounded-full bg-white/5 text-teal-300 border border-white/5">{s}</span>
-          )}</For>
+          <For each={props.skills}>{(s) => <SkillTag>{s}</SkillTag>}</For>
         </div>
       )}
     </div>

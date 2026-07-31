@@ -38,7 +38,11 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm install
-      - name: Build
+      - name: Check Formatting
+        run: npm run format:check
+      - name: Lint Code
+        run: npm run lint
+      - name: Build Assets
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
