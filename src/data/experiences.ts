@@ -9,16 +9,18 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
-    role: "Fullstack Developer",
+    role: "Full Stack Engineer",
     period: "Nov 2021 - Present",
     company: "Coherent Solutions",
     link: "https://www.coherentsolutions.com/",
     bullets: [
-      "Developed Ember.js features for a major US educational content platform.",
-      "Improved backend logic in Python for business reports and ONIX imports.",
-      "Implemented synchronization between legacy monolith and new infrastructure.",
-      "Built Lambda functions to support new deployment pipelines.",
-      "Optimized PostgreSQL queries using indexes and Elasticsearch analysis.",
+      "Maintained Django and DRF APIs for catalog management; built content ingestion pipelines (ONIX, CSV, Excel imports, Google Cloud Storage, Celery tasks).",
+      "Implemented bulk product sync from legacy monolith to new microservices via AWS SNS; maintained pricing logic and integrated with a major textbook publisher API.",
+      "Optimized PostgreSQL queries using indexes and Elasticsearch based on EXPLAIN analysis.",
+      "Contributed to new microservices (Python/TypeScript): report generation and FTP delivery via AWS EventBridge Scheduler, courseware fulfillment APIs, Lambda/SAM/CloudFormation, S3 presigned URLs, SQS FIFO queues.",
+      "Developed React UI for connection integrations, pricing schedules, reports, and discount codes using Apollo Client (GraphQL).",
+      "Developed features and improved the Ember.js codebase (bulk uploaders, DOMO analytics, shared Ember Data models, localize.js localization).",
+      "Wrote automated tasks using AWS CDK, Lambda functions, and EventBridge for NestJS API service.",
     ],
     skills: [
       "python",
@@ -42,6 +44,8 @@ export const experiences: Experience[] = [
       "docker-sam",
       "cloudformation",
       "sequelize",
+      "s3",
+      "google-cloud-storage",
     ],
   },
   {
@@ -50,7 +54,8 @@ export const experiences: Experience[] = [
     company: "ISsoft",
     link: "https://issoft.by/",
     bullets: [
-      "Built and optimized features using Ember.js.",
+      "Developed functionality, improved and optimized the Ember.js codebase for a major US educational content platform.",
+      "Built reusable Ember UI components (async combobox with search, tooltips, statuses, messages).",
       "Worked with Django and DRF for backend integrations.",
     ],
     skills: ["javascript", "emberjs", "python", "django", "drf"],
@@ -61,9 +66,11 @@ export const experiences: Experience[] = [
     company: "av.by",
     link: "https://av.by/",
     bullets: [
-      "Implemented finance campaign features and video experiences.",
-      "Built admin interfaces for paid products and moderation workflows.",
-      "Delivered mobile app features using React Native.",
+      "Built finance campaign features for promotion of finance products on advert pages; performed load testing with Apache JMeter.",
+      "Implemented admin controls for paid top days, ad banners, and finance product list/view pages.",
+      "Implemented video ad features: user upload, video playback in ad cards, admin moderation workflows.",
+      "Built a request-mapper service to proxy requests from old server to new API for testing new functionalities.",
+      "Delivered mobile app dialog screens using React Native.",
     ],
     skills: [
       "javascript",
@@ -77,6 +84,8 @@ export const experiences: Experience[] = [
       "express",
       "axios",
       "pm2",
+      "react-native",
+      "redux-saga",
     ],
   },
   {
@@ -85,9 +94,11 @@ export const experiences: Experience[] = [
     company: "Start Matter",
     link: "https://startmatter.com/",
     bullets: [
-      "Worked on mobile and web features, implementing modals and improving onboarding flows.",
-      "Implemented pagination and integrations, helped stabilize media handling and editor components.",
-      "Contributed to cross-cutting improvements and bug fixes that increased product reliability.",
+      "Implemented modals, track autoplay after onboarding, and bug fixes for the BrainFm music app.",
+      "Built Stripe payment integration for paid images and increased media storage on the Heroic platform.",
+      "Implemented user post pagination and third-party integrations (Mailchimp, Infusionsoft); added active-user tracking.",
+      "Wrote Django management commands for migrating users to new headline/paragraph global style controls.",
+      "Implemented new controls for TinyMCE inline editor popups and countdown element styling.",
     ],
     skills: [
       "javascript",
@@ -108,5 +119,16 @@ export const experiences: Experience[] = [
       "jquery",
       "tinymce",
     ],
+  },
+  {
+    role: "Junior Frontend Developer",
+    period: "Apr 2017 - Feb 2018",
+    company: "Qweeco",
+    bullets: [
+      "Implemented logic and styles for new UI components on the Heroic page-builder platform.",
+      "Added multi-tab/browser session locking to prevent concurrent editor conflicts.",
+      "Fixed bugs related to the TinyMCE editor and improved the user image gallery with third-party image service APIs.",
+    ],
+    skills: ["javascript", "react", "jquery", "tinymce"],
   },
 ];
