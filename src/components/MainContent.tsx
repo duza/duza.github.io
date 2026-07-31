@@ -6,7 +6,7 @@ import { PROFILE } from "../data/profile";
 
 const MainContent: Component = () => {
   return (
-    <main class="py-24 lg:w-[58%] flex-1 space-y-24 pr-1">
+    <main class="py-6 lg:w-[58%] flex-1 space-y-24 pr-1 lg:py-24">
       <article id="about" class="mb-16 scroll-mt-24 md:mb-24 lg:mb-36">
         <div class="space-y-8">
           <SectionHeading class="mb-0">About</SectionHeading>
